@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+        <title>Water Bill Calculator</title>
+        <!-- Latest compiled and minified CSS -->
+         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"></link>
+         <link rel="stylesheet" type="text/css" href="CitizenStyle.css" />
+         <style type="text/css">
+         body{
+        background-color: white;
+        color:white;
+         }
+        </style>
+    </h:head>
+    <center>
+       <body>
+             <div class="container">
+                 
+            <div style="background-color: skyblue">
+            <h3 style="background-color: #10707f; color: white; font-family: serif"><center>Water Bill Calculator</center></h3>
+            </div>
+            
+                    <div class="row centered-form">
+                <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+                    
+                    <div class="panel panel-default">  
+                        <div class="panel-body">
+                              <h:form class="form-horizontal,justify-content-center">
+                                <div class="form-group">
+                                    <h:inputText value="#{bm.bill.meter_owner}" class="form-control form-control-sm" a:placeholder="meter owner"/>
+                                </div>
+                                   <div class="form-group">
+                                    <h:inputText value="#{bm.bill.start_numbers}" class="form-control form-control-sm" a:placeholder="Starting number"/>
+                                </div>
+                                  <div class="row">
+                                        <div class="col-xs-6 col-sm-6 col-md-6">
+                                    <div class="form-group">
+                                        <h:inputText value="#{bm.bill.end_numbers}" class="form-control form-control-sm" a:placeholder="Endiing number"/>
+                                        </div>
+                                    </div>
+                                       <div class="form-group">
+                                     <h:selectOneMenu value="#{bm.bill.category}" class="form-control form-control-sm">
+                                            <f:selectItem noSelectionOption="true" itemLabel="Category"/>
+                                            <f:selectItems value="#{bm.ECategories}"/>
+                                        </h:selectOneMenu>
+                                 </div>
+                                     
+                                  </div>
+                                     <h:commandButton action="#{bm.registerCalculator()}" value="Calculate Bill" class="btn btn-info btn-block"/>
+                                
+                              </h:form><br/>
+                            <h:form>
+                                <h:commandButton action="report.xhtml" value="View Bill" class="btn btn-info btn-block"/>
+                            </h:form>
+                        </div>
+       
+             </div>
+                </div>
+                    </div>
+             </div>
+           
+           
+      
+     
+       </body>
+    
+    </center>
+</html>
+
